@@ -214,7 +214,7 @@ export default function Portfolio() {
                 </div>
 
                 <p className="relative z-10 animate-paragraph-slide-1">
-                  Soy Isabella Zapata estudiante de diseñadora de vestuario en su último semestre de 22 años, con una
+                  Soy Isabella Zapata profesional de diseñadora de vestuario en su último semestre de 22 años, con una
                   sólida formación académica y una pasión por crear piezas que fusionen creatividad, técnica y
                   sostenibilidad.
                 </p>
