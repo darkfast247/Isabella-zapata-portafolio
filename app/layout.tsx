@@ -1,6 +1,13 @@
 import type React from "react"
-import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import "./globals.css"
+import type { Metadata } from "next"
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
 
 export const metadata: Metadata = {
   title: "Isabella Zapata Portafolio",
@@ -11,12 +18,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="es" className={`${inter.variable}`}>
+      <body className={`${inter.className}`}>{children}</body>
     </html>
   )
 }
