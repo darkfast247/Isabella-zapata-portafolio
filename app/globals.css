@@ -1,0 +1,2102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Westwood-inspired Animations */
+
+/* Hero Section Animations */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pattern-drift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-5px) translateY(10px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes pattern-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes float-crown {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-3deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse-star {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float-reverse {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(8px) translateX(-5px);
+  }
+  66% {
+    transform: translateY(-5px) translateX(8px);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(15px) translateY(-10px) rotate(90deg);
+  }
+  50% {
+    transform: translateX(-10px) translateY(15px) rotate(180deg);
+  }
+  75% {
+    transform: translateX(-15px) translateY(-5px) rotate(270deg);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes border-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes border-glow-reverse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scaleX(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(0.8);
+  }
+}
+
+@keyframes hero-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes crown-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.5);
+  }
+  50% {
+    transform: translateY(10px) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes crown-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  0% {
+    transform: rotate(360deg) translateX(15px) rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg) translateX(15px) rotate(0deg);
+  }
+}
+
+@keyframes name-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes frame-glow {
+  0%,
+  100% {
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    border-color: rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes frame-glow-delay {
+  0%,
+  100% {
+    border-color: rgba(192, 192, 192, 0.1);
+  }
+  50% {
+    border-color: rgba(192, 192, 192, 0.4);
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes flourish-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) rotate(-45deg);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes flourish-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) rotate(45deg);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes subtitle-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes diamond-spin {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes content-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes divider-expand {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes line-grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 4rem;
+  }
+}
+
+@keyframes line-grow-reverse {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 4rem;
+  }
+}
+
+@keyframes crown-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes title-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+  }
+}
+
+@keyframes lightning-left {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-5px) rotate(-10deg);
+  }
+}
+
+@keyframes lightning-right {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(5px) rotate(10deg);
+  }
+}
+
+@keyframes line-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@keyframes quote-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-indicator {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chain-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes chain-link {
+  0%,
+  100% {
+    transform: scale(1);
+    border-color: rgba(192, 192, 192, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    border-color: rgba(192, 192, 192, 0.8);
+  }
+}
+
+@keyframes chain-link-delay {
+  0%,
+  100% {
+    transform: scale(1);
+    border-color: rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    border-color: rgba(139, 92, 246, 1);
+  }
+}
+
+@keyframes chain-link-delay-2 {
+  0%,
+  100% {
+    transform: scale(1);
+    border-color: rgba(192, 192, 192, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    border-color: rgba(192, 192, 192, 0.8);
+  }
+}
+
+@keyframes chain-connect {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes chain-connect-delay {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scaleX(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bounce-elegant {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transform: translate3d(0, -15px, 0);
+  }
+  70% {
+    transform: translate3d(0, -8px, 0);
+  }
+  90% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+/* About Section Animations */
+@keyframes section-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes corner-glow {
+  0%,
+  100% {
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    border-color: rgba(139, 92, 246, 0.8);
+  }
+}
+
+@keyframes corner-glow-delay {
+  0%,
+  100% {
+    border-color: rgba(192, 192, 192, 0.3);
+  }
+  50% {
+    border-color: rgba(192, 192, 192, 0.8);
+  }
+}
+
+@keyframes text-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes header-assemble {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes crown-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes title-typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes dots-sequence {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot-1 {
+  0%,
+  66%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes dot-2 {
+  0%,
+  33%,
+  66%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes dot-3 {
+  0%,
+  33%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  66% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes quote-entrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.5);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes paragraph-slide-1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes paragraph-slide-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes philosophy-highlight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes philosophy-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ornament-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(10deg);
+  }
+}
+
+@keyframes quote-exit {
+  0% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.5);
+  }
+  100% {
+    opacity: 0.1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes image-entrance {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes frame-outer {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes frame-inner {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes image-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes image-zoom {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes overlay-shift {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes circle-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes small-orbit {
+  0% {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+@keyframes crown-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Projects Section Animations */
+@keyframes projects-entrance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pattern-wave {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes pattern-shift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+@keyframes projects-header {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ornamental-line {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg) scale(1.2);
+  }
+}
+
+@keyframes star-twinkle-delay {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: rotate(180deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.2);
+  }
+}
+
+@keyframes line-extend {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 4rem;
+  }
+}
+
+@keyframes line-extend-reverse {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 4rem;
+  }
+}
+
+@keyframes crown-majesty {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes projects-title {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline-draw {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes underline-left {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+@keyframes underline-right {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+@keyframes center-dot {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes project-card {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes project-hover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes card-slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes corner-draw-1 {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 1rem;
+    height: 0;
+  }
+  100% {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@keyframes corner-draw-2 {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 1rem;
+    height: 0;
+  }
+  100% {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@keyframes corner-draw-3 {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 1rem;
+    height: 0;
+  }
+  100% {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@keyframes corner-draw-4 {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 1rem;
+    height: 0;
+  }
+  100% {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@keyframes image-container {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes project-image {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes badge-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes badge-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes chain-decoration {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes chain-dot-1 {
+  0%,
+  66%,
+  100% {
+    border-color: rgba(192, 192, 192, 0.5);
+  }
+  33% {
+    border-color: rgba(192, 192, 192, 1);
+  }
+}
+
+@keyframes chain-dot-2 {
+  0%,
+  33%,
+  100% {
+    border-color: rgba(139, 92, 246, 0.5);
+  }
+  66% {
+    border-color: rgba(139, 92, 246, 1);
+  }
+}
+
+@keyframes chain-line {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes content-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes year-badge {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes year-star {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes project-title {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes accent-bar {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 2rem;
+  }
+}
+
+@keyframes project-description {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes project-button {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes button-dot {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Contact Section Animations */
+@keyframes contact-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contact-decoration {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes crown-gentle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+
+@keyframes crown-gentle-delay {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+}
+
+@keyframes contact-line {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes contact-title {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contact-flourish {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes contact-text {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contact-buttons {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes main-button {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes button-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes mail-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes button-accent {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes social-buttons {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes social-button {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes social-hover {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes social-icon {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes social-dot {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes contact-info {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes email-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes phone-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Footer Animations */
+@keyframes footer-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footer-decoration {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footer-line-left {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+@keyframes footer-line-right {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+@keyframes footer-crown {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+@keyframes footer-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes footer-quote {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footer-star-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px) rotate(0deg);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(0) rotate(360deg);
+  }
+}
+
+@keyframes footer-star-right {
+  0% {
+    opacity: 0;
+    transform: translateX(10px) rotate(0deg);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(0) rotate(-360deg);
+  }
+}
+
+/* Apply animations */
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+.animate-pattern-drift {
+  animation: pattern-drift 12s ease-in-out infinite;
+}
+.animate-pattern-pulse {
+  animation: pattern-pulse 4s ease-in-out infinite;
+}
+.animate-float-crown {
+  animation: float-crown 6s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+.animate-pulse-star {
+  animation: pulse-star 2s ease-in-out infinite;
+}
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+.animate-drift {
+  animation: drift 10s ease-in-out infinite;
+}
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+.animate-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
+}
+.animate-border-glow-reverse {
+  animation: border-glow-reverse 3s ease-in-out infinite;
+}
+.animate-hero-entrance {
+  animation: hero-entrance 1.5s ease-out;
+}
+.animate-crown-entrance {
+  animation: crown-entrance 2s ease-out 0.5s both;
+}
+.animate-crown-glow {
+  animation: crown-glow 3s ease-in-out infinite;
+}
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+.animate-orbit-reverse {
+  animation: orbit-reverse 6s linear infinite;
+}
+.animate-name-reveal {
+  animation: name-reveal 1.2s ease-out 0.8s both;
+}
+.animate-frame-glow {
+  animation: frame-glow 4s ease-in-out infinite;
+}
+.animate-frame-glow-delay {
+  animation: frame-glow-delay 4s ease-in-out infinite 1s;
+}
+.animate-text-shimmer {
+  animation: text-shimmer 3s ease-in-out infinite;
+}
+.animate-flourish-left {
+  animation: flourish-left 1s ease-out 1.2s both;
+}
+.animate-flourish-right {
+  animation: flourish-right 1s ease-out 1.4s both;
+}
+.animate-subtitle-slide {
+  animation: subtitle-slide 1s ease-out 1s both;
+}
+.animate-diamond-spin {
+  animation: diamond-spin 4s linear infinite 2s;
+}
+.animate-content-fade-up {
+  animation: content-fade-up 1s ease-out 1.5s both;
+}
+.animate-divider-expand {
+  animation: divider-expand 0.8s ease-out 1.8s both;
+}
+.animate-line-grow {
+  animation: line-grow 0.6s ease-out 2s both;
+}
+.animate-line-grow-reverse {
+  animation: line-grow-reverse 0.6s ease-out 2.1s both;
+}
+.animate-crown-pulse {
+  animation: crown-pulse 2s ease-in-out infinite 2s;
+}
+.animate-title-glow {
+  animation: title-glow 3s ease-in-out infinite 2.2s;
+}
+.animate-lightning-left {
+  animation: lightning-left 2s ease-in-out infinite 2.5s;
+}
+.animate-lightning-right {
+  animation: lightning-right 2s ease-in-out infinite 2.7s;
+}
+.animate-line-pulse {
+  animation: line-pulse 2s ease-in-out infinite 3s;
+}
+.animate-dot-pulse {
+  animation: dot-pulse 1.5s ease-in-out infinite 3.2s;
+}
+.animate-quote-fade {
+  animation: quote-fade 1s ease-out 3.5s both;
+}
+.animate-scroll-indicator {
+  animation: scroll-indicator 1s ease-out 4s both;
+}
+.animate-chain-sway {
+  animation: chain-sway 3s ease-in-out infinite 4s;
+}
+.animate-chain-link {
+  animation: chain-link 2s ease-in-out infinite 4.2s;
+}
+.animate-chain-link-delay {
+  animation: chain-link-delay 2s ease-in-out infinite 4.4s;
+}
+.animate-chain-link-delay-2 {
+  animation: chain-link-delay-2 2s ease-in-out infinite 4.6s;
+}
+.animate-chain-connect {
+  animation: chain-connect 1.5s ease-in-out infinite 4.8s;
+}
+.animate-chain-connect-delay {
+  animation: chain-connect-delay 1.5s ease-in-out infinite 5s;
+}
+.animate-bounce-elegant {
+  animation: bounce-elegant 2s ease-in-out infinite 5.2s;
+}
+
+/* About Section Animation Classes */
+.animate-section-fade-in {
+  animation: section-fade-in 1s ease-out;
+}
+.animate-corner-glow {
+  animation: corner-glow 3s ease-in-out infinite;
+}
+.animate-corner-glow-delay {
+  animation: corner-glow-delay 3s ease-in-out infinite 0.5s;
+}
+.animate-text-slide-in {
+  animation: text-slide-in 1s ease-out 0.3s both;
+}
+.animate-header-assemble {
+  animation: header-assemble 1s ease-out 0.5s both;
+}
+.animate-crown-rotate {
+  animation: crown-rotate 8s linear infinite 1s;
+}
+.animate-title-typewriter {
+  animation: title-typewriter 1.5s ease-out 0.8s both;
+}
+.animate-dots-sequence {
+  animation: dots-sequence 0.5s ease-out 1.2s both;
+}
+.animate-dot-1 {
+  animation: dot-1 3s ease-in-out infinite 1.5s;
+}
+.animate-dot-2 {
+  animation: dot-2 3s ease-in-out infinite 1.5s;
+}
+.animate-dot-3 {
+  animation: dot-3 3s ease-in-out infinite 1.5s;
+}
+.animate-text-reveal {
+  animation: text-reveal 1s ease-out 1.8s both;
+}
+.animate-quote-entrance {
+  animation: quote-entrance 1s ease-out 2s both;
+}
+.animate-paragraph-slide-1 {
+  animation: paragraph-slide-1 0.8s ease-out 2.2s both;
+}
+.animate-paragraph-slide-2 {
+  animation: paragraph-slide-2 0.8s ease-out 2.6s both;
+}
+.animate-philosophy-highlight {
+  animation: philosophy-highlight 1s ease-out 3s both;
+}
+.animate-philosophy-text {
+  animation: philosophy-text 0.8s ease-out 3.2s both;
+}
+.animate-ornament-float {
+  animation: ornament-float 2s ease-in-out infinite 3.5s;
+}
+.animate-quote-exit {
+  animation: quote-exit 1s ease-out 4s both;
+}
+.animate-image-entrance {
+  animation: image-entrance 1s ease-out 0.8s both;
+}
+.animate-frame-outer {
+  animation: frame-outer 1.2s ease-out 1s both;
+}
+.animate-frame-inner {
+  animation: frame-inner 1s ease-out 1.3s both;
+}
+.animate-image-reveal {
+  animation: image-reveal 1.5s ease-out 1.5s both;
+}
+.animate-image-zoom {
+  animation: image-zoom 1.5s ease-out 1.5s both;
+}
+.animate-overlay-shift {
+  animation: overlay-shift 4s ease-in-out infinite 2s;
+}
+.animate-circle-rotate {
+  animation: circle-rotate 12s linear infinite 2.5s;
+}
+.animate-small-orbit {
+  animation: small-orbit 6s linear infinite 3s;
+}
+.animate-crown-float {
+  animation: crown-float 3s ease-in-out infinite 3.5s;
+}
+
+/* Projects Section Animation Classes */
+.animate-projects-entrance {
+  animation: projects-entrance 1s ease-out;
+}
+.animate-pattern-wave {
+  animation: pattern-wave 8s ease-in-out infinite;
+}
+.animate-pattern-shift {
+  animation: pattern-shift 10s linear infinite;
+}
+.animate-projects-header {
+  animation: projects-header 1s ease-out 0.3s both;
+}
+.animate-ornamental-line {
+  animation: ornamental-line 1.2s ease-out 0.5s both;
+}
+.animate-star-twinkle {
+  animation: star-twinkle 2s ease-in-out infinite 0.8s;
+}
+.animate-star-twinkle-delay {
+  animation: star-twinkle-delay 2s ease-in-out infinite 1s;
+}
+.animate-line-extend {
+  animation: line-extend 0.8s ease-out 1.2s both;
+}
+.animate-line-extend-reverse {
+  animation: line-extend-reverse 0.8s ease-out 1.4s both;
+}
+.animate-crown-majesty {
+  animation: crown-majesty 3s ease-in-out infinite 1.6s;
+}
+.animate-projects-title {
+  animation: projects-title 1s ease-out 1.8s both;
+}
+.animate-underline-draw {
+  animation: underline-draw 1s ease-out 2s both;
+}
+.animate-underline-left {
+  animation: underline-left 0.6s ease-out 2.2s both;
+}
+.animate-underline-right {
+  animation: underline-right 0.6s ease-out 2.4s both;
+}
+.animate-center-dot {
+  animation: center-dot 0.5s ease-out 2.6s both;
+}
+.animate-project-card {
+  animation: project-card 0.8s ease-out both;
+}
+.animate-project-hover {
+  animation: project-hover 0.3s ease-out;
+}
+.animate-card-slide-left {
+  animation: card-slide-left 0.8s ease-out both;
+}
+.animate-card-slide-right {
+  animation: card-slide-right 0.8s ease-out both;
+}
+.animate-corner-draw-1 {
+  animation: corner-draw-1 1s ease-out 0.2s both;
+}
+.animate-corner-draw-2 {
+  animation: corner-draw-2 1s ease-out 0.4s both;
+}
+.animate-corner-draw-3 {
+  animation: corner-draw-3 1s ease-out 0.6s both;
+}
+.animate-corner-draw-4 {
+  animation: corner-draw-4 1s ease-out 0.8s both;
+}
+.animate-image-container {
+  animation: image-container 1s ease-out 0.3s both;
+}
+.animate-project-image {
+  animation: project-image 1.2s ease-out 0.5s both;
+}
+.animate-badge-float {
+  animation: badge-float 2s ease-in-out infinite 1s;
+}
+.animate-badge-dot {
+  animation: badge-dot 1.5s ease-in-out infinite 1.2s;
+}
+.animate-chain-decoration {
+  animation: chain-decoration 0.8s ease-out 1.5s both;
+}
+.animate-chain-dot-1 {
+  animation: chain-dot-1 3s ease-in-out infinite 2s;
+}
+.animate-chain-dot-2 {
+  animation: chain-dot-2 3s ease-in-out infinite 2s;
+}
+.animate-chain-line {
+  animation: chain-line 2s ease-in-out infinite 2.2s;
+}
+.animate-content-slide {
+  animation: content-slide 1s ease-out 0.5s both;
+}
+.animate-year-badge {
+  animation: year-badge 0.8s ease-out 0.7s both;
+}
+.animate-year-star {
+  animation: year-star 4s linear infinite 1s;
+}
+.animate-project-title {
+  animation: project-title 1s ease-out 0.9s both;
+}
+.animate-accent-bar {
+  animation: accent-bar 0.8s ease-out 1.2s both;
+}
+.animate-project-description {
+  animation: project-description 1s ease-out 1.4s both;
+}
+.animate-project-button {
+  animation: project-button 0.8s ease-out 1.6s both;
+}
+.animate-button-dot {
+  animation: button-dot 0.3s ease-out;
+}
+
+/* Contact Section Animation Classes */
+.animate-contact-entrance {
+  animation: contact-entrance 1s ease-out;
+}
+.animate-contact-decoration {
+  animation: contact-decoration 1s ease-out 0.3s both;
+}
+.animate-crown-gentle {
+  animation: crown-gentle 4s ease-in-out infinite 0.5s;
+}
+.animate-crown-gentle-delay {
+  animation: crown-gentle-delay 4s ease-in-out infinite 0.8s;
+}
+.animate-contact-line {
+  animation: contact-line 1s ease-out 1s both;
+}
+.animate-contact-title {
+  animation: contact-title 1s ease-out 0.5s both;
+}
+.animate-contact-flourish {
+  animation: contact-flourish 1s ease-out 0.8s both;
+}
+.animate-contact-text {
+  animation: contact-text 1s ease-out 1.2s both;
+}
+.animate-contact-buttons {
+  animation: contact-buttons 1s ease-out 1.5s both;
+}
+.animate-main-button {
+  animation: main-button 0.8s ease-out 1.8s both;
+}
+.animate-button-pulse {
+  animation: button-pulse 0.3s ease-out;
+}
+.animate-mail-bounce {
+  animation: mail-bounce 0.3s ease-out;
+}
+.animate-button-accent {
+  animation: button-accent 0.3s ease-out;
+}
+.animate-social-buttons {
+  animation: social-buttons 0.8s ease-out 2s both;
+}
+.animate-social-button {
+  animation: social-button 0.6s ease-out both;
+}
+.animate-social-hover {
+  animation: social-hover 0.3s ease-out;
+}
+.animate-social-icon {
+  animation: social-icon 0.3s ease-out;
+}
+.animate-social-dot {
+  animation: social-dot 0.3s ease-out;
+}
+.animate-contact-info {
+  animation: contact-info 1s ease-out 2.3s both;
+}
+.animate-email-fade {
+  animation: email-fade 0.8s ease-out 2.5s both;
+}
+.animate-phone-fade {
+  animation: phone-fade 0.8s ease-out 2.7s both;
+}
+
+/* Footer Animation Classes */
+.animate-footer-entrance {
+  animation: footer-entrance 1s ease-out;
+}
+.animate-footer-decoration {
+  animation: footer-decoration 1s ease-out 0.3s both;
+}
+.animate-footer-line-left {
+  animation: footer-line-left 0.6s ease-out 0.5s both;
+}
+.animate-footer-line-right {
+  animation: footer-line-right 0.6s ease-out 0.7s both;
+}
+.animate-footer-crown {
+  animation: footer-crown 0.8s ease-out 0.9s both;
+}
+.animate-footer-text {
+  animation: footer-text 1s ease-out 1.2s both;
+}
+.animate-footer-quote {
+  animation: footer-quote 1s ease-out 1.5s both;
+}
+.animate-footer-star-left {
+  animation: footer-star-left 1s ease-out 1.7s both;
+}
+.animate-footer-star-right {
+  animation: footer-star-right 1s ease-out 1.9s both;
+}
